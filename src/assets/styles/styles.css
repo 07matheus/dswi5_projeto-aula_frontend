@@ -1,0 +1,390 @@
+/* configurações gerais */
+
+@charset "utf-8";
+
+html {
+    margin : 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* configuração do componente Header */
+
+.app-header {
+    z-index: 1;
+    position: fixed;
+    background: #3c9B46;
+    padding: 10px;
+    width: calc(100% - 0%);
+    top: 0;
+    left:0;
+    right: 0;
+    height: 60px;
+}
+
+.app-leftarea {
+    padding-top: 7px;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+.app-leftarea span {
+    margin-left: 10px;
+}
+
+.app-toggle {
+    position: absolute;
+    margin-left: 220px;
+    top: 13px;
+    font-size: 23px;
+    color: #FFF; 
+    cursor: pointer;
+    display: flex;
+}
+
+.app-toggle:focus, .app-toggle:hover {
+   background-color: #00635a;
+   text-decoration: none; 
+} 
+
+.app-profile {
+    position: absolute;
+    right: 50px;
+    display: flex;
+    font-weight: 900;
+    font-size: 15px;
+    top: 13px;
+}
+
+.app-profile img {
+    top:5px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.app-profile span {
+    margin-top: 5px;
+    margin-left: 10px;
+    padding-right: 10px;
+}
+
+.app-logout {
+    margin-top: 0px;
+    margin-left: 15px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Configuração do show mensagem - titulo do sistema*/
+
+.app-titulo-sistema {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-align: center;
+            align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-align: justify;
+            justify-content: space-between;
+        -webkit-box-pack: horizontal;
+        -ms-flex-align: row;
+            flex-direction: row;
+    background-color: #fff;
+    margin: -30px -30px 30px;
+    padding: 20px 20px;        
+       
+}
+
+.app-titulo-sistema h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.app-titulo-sistema p {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+/* Configuração do menu sidebar */
+
+.app-sidebar {
+    z-index: 1;
+    top: 0;
+    background: #2f323a;
+    margin-top: 60px;
+    position: fixed;
+    left:0;
+    min-width: 220px;
+    max-width: 220px;
+    height: 100vh;
+    transition: 0.5s;
+    transition-property: left;
+    overflow: none;
+}
+
+.app-sidebar ul {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0 0 5px;
+
+}
+
+.app-sidebar li {
+    width: 100%;
+    list-style-type: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.app-sidebar ul li a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+}
+
+.app-sidebar ul li a:hover {
+    color: #11101d;
+    background: #fff;
+
+}
+
+.app-sidebar  ul li a i {
+    min-width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 12px;
+    text-align: center;
+
+}
+
+.app-sidebar.active {
+    margin-left: -220px;
+}
+
+
+
+/* Configuração do conteúdo - content - layout  */
+
+.app-content {
+    min-height: calc(100vh - 60px); 
+    margin-top: 60px;
+    margin-left: 220px;
+    padding: 30px;
+    background-color: #E5E5E5;
+    transition: 0.5s;
+    transition-property: left;
+    overflow: none;
+}
+
+.app-content.active {
+    margin-left: 0px;
+}
+
+.app-windows {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+/* confiuraçõs para tabela */
+
+.app-tabela{
+   width: 100%;
+}
+
+.app-cabecalho-tabela {
+    font-weight: bold;
+    text-align: center;
+}
+
+.app-coluna-detalhe-centro {
+    text-align: center;
+}
+
+.app-text-underline {
+    text-decoration: none;
+}
+
+/* configuração para imagens */
+
+.img-avatar {
+    border: 1px solid #dee2e6;
+    max-width: 100%;
+    border-radius: 50%;
+    justify-content: center;
+    display: block;
+    margin: auto;
+
+}
+
+.fileInput{
+    position: relative;
+    margin-bottom: 1.5em;
+}
+
+.fileInput input {
+    position:relative;
+    text-align: right;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    height: 60px;
+    max-width: 100%;
+}
+
+.fileInput .upload{
+    position: absolute;
+    top: 0;
+    left: auto;
+    width: 100%;
+    height: 70%;
+    z-index:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor:pointer;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    padding: 1em;
+    transition: background-color 0.4s;
+    box-shadow: 0 8px 24px rgba(149,157,165,0.5); 
+
+}
+
+/* configuração para diversos componentes */
+
+.app-show-imagem {
+    float:left;
+    margin-right: 15px;
+    width: 25px;
+    height: 25px;
+}
+
+.app-show-mensagem {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 6px;
+    width: 300px;
+    height: 18px;
+
+}
+
+.app-close-btn {
+    color: white;
+    font-weight: 900;
+    float: right;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.app-close-btn:hover{
+    color:black;
+}
+
+
+
+/* dimensionando tabela com dados responsivos */
+
+@media only screen and (max-width:800px){
+    
+    #no_more_table table,
+    #no_more_table thead,
+    #no_more_table tbody,
+    #no_more_table th,
+    #no_more_table td,
+    #no_more_table tr {
+        display: block;
+    } 
+
+    #no_more_table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #no_more_table tr {
+        border: 1px solid #ccc;
+    }
+
+    #no_more_table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
+
+    #no_more_table td::before {
+        position: absolute;
+        top:6px;
+        left:6px;
+        width: 45%;
+        border-bottom: 1px solid #eee;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    #no_more_table td::before {
+        content:attr(data-label);
+        float: left;
+    }    
+
+    .app-content{
+        margin-left: 0;
+    }
+
+
+    .app-leftarea{
+        display: none;
+    }
+
+    .app-profile{
+        display:none;
+    }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
