@@ -275,7 +275,13 @@ html {
 }
 
 /* configuração para diversos componentes */
-
+.app-button {
+    width: 100%;
+}
+.app-label {
+    font-size: 20px;
+    font-weight: 600;
+}
 .app-show-imagem {
     float:left;
     margin-right: 15px;

@@ -1,10 +1,13 @@
 import React, { Fragment, useState } from 'react';
 import * as Faicons from 'react-icons/fa';
-import { USER_PHOTO } from '../../config/config';
+import { SERVIDOR_GET_IMAGEM, USER_PHOTO } from '../../config/config';
+import useLogin from '../../hook/useLogin';
+import { useNavigate } from 'react-router-dom';
 
 const Headers = ({ isToogle }) => {
-    
+   const navigate            = useNavigate();
    const [toggle, setToogle] = useState(false);
+   const { getAccessToken, getRefreshToken, getNomeUsuario, getFotoUsuario, logout } = useLogin();
 
    const toggleClick = () => {
       console.log(" header "+toggle);
@@ -12,6 +15,12 @@ const Headers = ({ isToogle }) => {
       isToogle(toggle);
    }
 
+   const sair = async () => {
+      logout();
+      navigate('/login');
+   }
+
+   const foto = getFotoUsuario();
 
    return (
      <Fragment>
@@ -25,11 +34,16 @@ const Headers = ({ isToogle }) => {
                     /></i>
             </div>
             <div className="app-profile">
-                <img src={USER_PHOTO} alt="foto do usuário"/>
-                <span>Cocão da Silva</span>
-                <div className='app-logout'>
-                <i><Faicons.FaSignOutAlt/></i> 
-                </div>
+               <img src={
+                  foto === null ? USER_PHOTO: `${SERVIDOR_GET_IMAGEM}${foto}`
+                } alt="foto do usuário"
+               />
+               <span> { getNomeUsuario() } </span>
+               <div className='app-logout'>
+               <i>
+                  <Faicons.FaSignOutAlt onClick={ () => sair() }/>
+               </i> 
+               </div>
             </div>
 
 
